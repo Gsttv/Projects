@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Roboto Mono", monospace;
+            min-height: 400px;
+            background-image: url("https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-temperatura-conceito-tipos-de-medicao-e-escalas.jpg.webp");
+            background-color: #000000;
+            background-size: cover;
+            background-position: center ;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        .page-title {
+            color: black;
+            margin: 0 0 5px;
+        }
+
+        .page-subtitle {
+            color: black;
+            margin-top: 5px;
+        }
+
+        .page-logo {
+            width: 200px;
+        }
+
+        .alura-logo {
+            width: 40px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        input {
+            margin: 12px;
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        label {
+            color: black;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 4px 8px;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        function Converter() {
+            var valor_kelvin = document.getElementById("valor");
+            var valor = parseFloat(valor_kelvin.value);
+            var final = valor - 273;
+
+            var valor_mostrado = document.getElementById("valorConvertido");
+            var texto = "A temperatura em Celsius é " + final + "º";
+            valor_mostrado.innerHTML = texto;
+
+            //console.log(final + " K");
+
+            var valor_fahrenheit = document.getElementById("valor-2");
+            var valor_2 = parseFloat(valor_fahrenheit.value);
+            var final_2 = (valor_2*(9/5))+32;
+
+            var valor_mostrado_2 = document.getElementById("valorConvertido-2");
+            var texto_2 = "A temperatura em Celsius é " + final_2 + "º";
+            valor_mostrado_2.innerHTML = texto_2;
+
+            //console.log("R$ " + final_2);
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">
+            Conversor de Temperatura
+        </h1>
+        <p class="page-subtitle">
+            Descubra os valores das Temperaturas em Celsius
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
+            class="page-logo" alt=""><br><br>
+        <label for="moeda">Insira o valor em Kelvin</label><br>
+        <input type="number" id="valor" size="2" /><br>
+        <button type="submit" onclick="Converter()">Converter para Celsius</button>
+        <h2 id="valorConvertido"></h2>
+        
+        <label for="moeda">Insira o valor em Fahrenheit </label><br>
+        <input type="number" id="valor-2" size="2" /><br>
+        <button type="submit" onclick="Converter()">Converter para Celsius</button>
+        <h2 id="valorConvertido-2"></h2>
+    </div>
+    <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+</body>
+
+</html>
